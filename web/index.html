@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>3-Style Execution Trainer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-dark text-light">
+    <div class="container py-4">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-8">
+          <div class="card bg-body border shadow">
+            <div class="card-body">
+              <div class="d-flex align-items-center justify-content-between mb-3 gap-3">
+                <h1 class="h3 mb-0">3-Style Execution Trainer</h1>
+                <div class="form-check form-switch m-0">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                    id="themeToggle"
+                    checked
+                  />
+                  <label class="form-check-label" for="themeToggle">Dark mode</label>
+                </div>
+              </div>
+
+              <form id="generatorForm" class="row g-3">
+                <div class="col-md-6">
+                  <label for="pieceType" class="form-label">Piece type</label>
+                  <select id="pieceType" class="form-select">
+                    <option value="corner">Corners</option>
+                    <option value="edge">Edges</option>
+                    <option value="wing">Wings</option>
+                    <option value="x-center">X-center</option>
+                    <option value="t-center">T-center</option>
+                    <option value="obliques">Obliques</option>
+                    <option value="midges">Midges</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="method" class="form-label">Method</label>
+                  <select id="method" class="form-select">
+                    <option value="fiveCycle">5-cycle</option>
+                    <option value="chain">chain</option>
+                  </select>
+                </div>
+
+                <div class="col-12" id="randomizeOrientationRow">
+                  <div class="d-flex justify-content-end">
+                    <div class="form-check form-switch mb-0">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="randomizeOrientation"
+                        checked
+                      />
+                      <label class="form-check-label" for="randomizeOrientation">Randomize 3rd comm orientation</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="count" class="form-label">Letters to generate</label>
+                  <input id="count" type="number" class="form-control" min="0" step="1" value="6" />
+                </div>
+
+                <div class="col-md-6">
+                  <label for="buffer" class="form-label">Buffer letter</label>
+                  <select id="buffer" class="form-select"></select>
+                </div>
+
+                <div class="col-12">
+                  <label for="scheme" class="form-label">Letter scheme</label>
+                  <textarea
+                    id="scheme"
+                    class="form-control"
+                    rows="1"
+                    spellcheck="false"
+                    style="overflow:hidden"
+                    placeholder="Blocks separated by spaces"
+                  >OABCDEFGHIJKLMNPRSTUVWYZ</textarea>
+                </div>
+
+                <div class="col-12">
+                  <label for="requiredPairs" class="form-label d-flex justify-content-between align-items-center gap-3">
+                    <span>Guaranteed letter pairs</span>
+                    <span class="form-check form-switch mb-0">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="includeInverses"
+                        checked
+                      />
+                      <label class="form-check-label small" for="includeInverses">Include inverses</label>
+                    </span>
+                  </label>
+                  <input
+                    id="requiredPairs"
+                    class="form-control"
+                    type="text"
+                    placeholder="Example: AB CD EF"
+                    spellcheck="false"
+                  />
+                </div>
+
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary w-100" id="generateBtn">Generate (Space or Enter)</button>
+
+                </div>
+              </form>
+
+              <div class="alert mt-4 d-none" id="errorBox"></div>
+
+              <section class="mt-4 d-none" id="results">
+                <h2 class="h5" id="lettersHeading"></h2>
+                <div id="pairGrid" class="d-flex flex-wrap gap-2"></div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="five_cycle.js"></script>
+    <script src="chain.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
