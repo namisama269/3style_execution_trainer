@@ -6,8 +6,10 @@ Live version: https://namisama269.github.io/3style-execution-trainer/
 
 You are given a sequence of 5 comms to solve for a piece type from your letter scheme and buffer, which when done from a solved cube will bring the cube back to solve, making drilling execution much more effective than having to scramble the cube. The sequence does not contain any trivial repeated or inverse comms.
 
-![Settings screen](images/settings_screen.png)
-![Focus screen](images/focus_screen.png)
+<div align="center">
+  <img src="images/settings_screen.png" alt="Settings screen" width="48%" />
+  <img src="images/focus_screen.png" alt="Focus screen" width="48%" />
+</div>
 
 ## Settings
 
