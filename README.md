@@ -2,7 +2,7 @@
 
 https://namisama269.github.io/3style-execution-trainer/
 
-3-Style Execution Trainer is a tool for training the execution step of 3BLD by drilling 3-style comms, focusing on recall, transitioning between comms and cancellations.
+3-Style Execution Trainer is a tool for training the execution step of blindsolving by drilling 3-style comms, focusing on recall, transitioning between comms and cancellations.
 
 You are given a sequence of 5 comms to solve for a piece type from your letter scheme and buffer, which when done from a solved cube will bring the cube back to solved, making drilling execution much more effective than having to scramble the cube. The sequence does not contain any trivial repeated or inverse comms.
 
